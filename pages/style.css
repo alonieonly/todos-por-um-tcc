@@ -1,0 +1,831 @@
+
+:root {
+    /* Cores ajustadas para bater com a foto */
+    --cor-primaria-escura: #003366;
+    --cor-primaria: #005fB2;
+    --cor-destaque: #00aeff;
+    --cor-fundo-geral: #f4f4f4; /* Mais próximo do fundo da imagem */
+    --cor-fundo-card: #ffffff;
+    --cor-texto-claro: #ffffff;
+    --cor-texto-escuro: #333;
+    --cor-texto-secundario: #555;
+    --sombra-card: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra mais sutil */
+    --raio-borda-card: 15px; /* Arredondamento dos cards */
+    --transicao-padrao: all 0.3s ease-out;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--cor-fundo-geral);
+    color: var(--cor-texto-escuro);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: 1100px; /* Mantém largura para fidelidade */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- 2. HEADER --- */
+
+/* --- 3. SEÇÃO HERO --- */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../imgs/IMAGEM_HOME.png') no-repeat center center/cover;
+    
+    /* 🎯 AJUSTES APLICADOS AQUI */
+    height: 400px;                 /* Define uma altura fixa para o banner */
+    max-width: 1100px;             /* Limita a largura (igual ao container do conteúdo) */
+    width: 110%;                    /* Garante que ele se ajuste em telas menores */
+    margin: 30px auto;             /* Adiciona margem em cima/baixo e centraliza na página */
+    border-radius: 15px;           /* Arredonda os cantos para um visual mais suave */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15); /* Adiciona uma sombra para destacar */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--cor-texto-claro);
+    position: relative; 
+}
+.hero-content h4 {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #f0f0f0;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+.hero h1 {
+    font-size: 3.5rem; /* Tamanho da foto */
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    line-height: 1.2;
+}
+
+.cta-button {
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto-claro);
+    padding: 12px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+    display: inline-block;
+    transition: var(--transicao-padrao);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2); /* Sombra sutil no botão */
+}
+
+.cta-button:hover {
+    background-color: #004c8e;
+}
+
+.donated-pieces {
+    position: absolute;
+    bottom: -20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: var(--cor-primaria-escura);
+    padding: 8px 20px;
+    border-bottom: solid 2px black;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    
+}
+
+/* --- 4. TÍTULOS E CARDS DE EVENTOS --- */
+.section-title-bar {
+    background-color: var(--cor-primaria);
+    padding: 10px 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    display: inline-block; /* Ajusta a largura ao conteúdo */
+     border-top-right-radius:  50px; 
+    border-bottom-right-radius:  50px;
+    
+}
+
+.section-title-bar h2 {
+    color: var(--cor-texto-claro);
+    font-size: 1.5rem;
+    font-weight: 500;
+    left: 0;
+    display: flex;
+}
+
+.events-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Um card por linha como na foto */
+    gap: 30px;
+    padding-bottom: 30px;
+}
+
+.event-card {
+    background-color: var(--cor-fundo-card);
+    border-radius: var(--raio-borda-card);
+    overflow: hidden;
+    box-shadow: var(--sombra-card);
+    display: flex; /* Para layout imagem | texto */
+    transition: var(--transicao-padrao);
+}
+
+.event-card:hover {
+    transform: translateY(-5px); /* Efeito sutil de levantar */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.event-image-wrapper { /* Novo wrapper para controlar a imagem */
+    width: 200px; /* Largura exata da imagem na foto */
+    flex-shrink: 0;
+    overflow: hidden; /* Garante que o arredondamento da imagem funcione */
+}
+
+.event-image-wrapper img {
+    width: 100%;
+    height: 100%; /* Preenche a altura do wrapper */
+    object-fit: cover;
+    border-radius: var(--raio-borda-card) 0 0 var(--raio-borda-card); /* Arredondamento da imagem na esquerda */
+}
+
+
+.event-details {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.event-details h3 {
+    font-size: 1.4rem;
+    color: var(--cor-primaria-escura);
+    margin-bottom: 10px;
+}
+
+.event-details p {
+    color: var(--cor-texto-secundario);
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: flex-start;
+    line-height: 1.4;
+}
+
+.event-details p i {
+    color: var(--cor-primaria);
+    margin-right: 10px;
+    width: 16px;
+    text-align: center;
+    margin-top: 4px;
+    font-size: 1rem; /* Icones um pouco maiores */
+}
+
+.event-description {
+    flex-grow: 1;
+    margin-top: 10px;
+}
+
+.details-button {
+    background-color: var(--cor-primaria-escura);
+    color: var(--cor-texto-claro);
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
+    align-self: flex-start;
+    transition: var(--transicao-padrao);
+}
+
+.details-button:hover {
+    background-color: #002244;
+}
+
+/* --- 5. PONTOS DE COLETA --- */
+.collection-points {
+    padding-bottom: 50px;
+}
+
+.donation-types {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.type-button {
+    background-color: var(--cor-primaria-escura);
+    color: var(--cor-texto-claro);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transicao-padrao);
+}
+.type-button.active, .type-button:hover {
+    background-color: var(--cor-primaria);
+}
+
+.type-button i {
+    margin-right: 8px;
+}
+
+.points-carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centralizado como na foto */
+    gap: 20px; /* Espaçamento da foto */
+}
+
+.point-item {
+    transition: var(--transicao-padrao);
+}
+
+.point-item:hover {
+    transform: scale(1.05); /* Efeito sutil nos ícones */
+}
+
+.point-item img {
+    max-width: 150px;
+    height: auto;
+}
+
+.blue-bg {
+    background-color: #63b0e3; /* Cor exata da foto */
+}
+
+.arrow {
+    font-size: 2rem;
+    color: var(--cor-primaria-escura);
+    cursor: pointer;
+    font-weight: bold;
+    transition: var(--transicao-padrao);
+}
+
+.arrow:hover {
+    color: var(--cor-destaque);
+}
+
+
+/* --- Estilo Geral da Seção --- */
+.ongs-destaque {
+    padding: 80px 0;
+    background-color: #ffffff; 
+}
+
+/* --- Container que centraliza o conteúdo --- */
+.container-ongs {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Cabeçalho: Título e Botões de Filtro --- */
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-header h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #2c3e50; /* Cor dos títulos */
+    margin-bottom: 20px;
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btn-filter {
+    font-family: 'Poppins', sans-serif;
+    border: 1px solid #ddd;
+    background-color: #f7f7f7;
+    color: #34495e; /* Cor do texto */
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-filter:hover {
+    background-color: #e9e9e9;
+    border-color: #ccc;
+}
+
+.btn-filter.active {
+    background-color: #0056b3;
+    color: #fff;
+    border-color: #0056b3;
+}
+
+
+.ongs-list {
+    display: grid;
+    gap: 30px; 
+}
+
+
+.ong-card {
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+    padding: 25px;
+    border-radius: 16px;
+    background-color: #f8f9fa; /* Fundo cinza bem claro do card */
+    box-shadow: 0 4px 22px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    /* ESSA É A LINHA MAIS IMPORTANTE PARA O EFEITO */
+    border-bottom: 1px solid #0c0c0c; 
+}
+
+.ong-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* --- Card em destaque com a borda azul --- */
+.ong-card.featured {
+    padding: 23px;
+    
+}
+
+/* --- Logo circular da ONG --- */
+.ong-logo {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.ong-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- Cores de fundo para os logos  */
+.logo-ame { background-color: #e0f3ff; }
+.logo-pets { background-color: #e9ecef; }
+.logo-ajuda { background-color: #e6e0ff; }
+.logo-idosos { background-color: #fae0ff; }
+
+/* --- Área do conteúdo de texto  */
+.ong-content {
+    flex-grow: 1;
+}
+
+/* --- Título da ONG + ícones ao lado  */
+.ong-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+}
+
+.ong-title h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+/* --- Estilo para as pequenas imagens de ícone --- */
+.ong-title span img {
+    width: 20px;  /* Ajuste o tamanho dos ícones aqui  */
+    height: 20px;
+}
+
+/* --- Linha de categorias (Alimentos, Roupas, etc.)  */
+.ong-categories {
+    font-size: 13px;
+    color: #7f8c8d; /* Cor cinza claro */
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+/* --- Parágrafo de descrição --- */
+.ong-description {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #34495e;
+}
+
+/* --- Área do mapa e botão "Visitar" --- */
+.ong-map-area {
+    flex-shrink: 0;
+    width: 160px;
+    text-align: center;
+}
+
+.map-image {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #eee;
+}
+
+.btn-visitar {
+    display: block;
+    width: 100%;
+    background-color: #004a99;
+    color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-visitar:hover {
+    background-color: #003d7a;
+}
+
+
+/*       ESTILOS DA SEÇÃO DE VAKINHAS      */
+
+
+.vakihnas-section {
+    padding: 60px 0;
+    background-color: #ffffff; /* Fundo branco para a seção */
+}
+
+/* --- Título da Seção --- */
+.vakihnas-header {
+    display: inline-flex; /* Faz o fundo se ajustar ao conteúdo */
+    align-items: center;
+    gap: 15px;
+    background-color: #004a99; /* Azul escuro principal */
+    color: #ffffff;
+    padding: 12px 30px;
+    border-top-right-radius:  50px; 
+    border-bottom-right-radius:  50px;
+    margin: 0 auto 40px; /* Centraliza o header na seção */
+}
+
+/* Usado para centralizar o header */
+.vakihnas-section .container {
+    text-align: left;
+}
+
+.vakihnas-header h2 {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+/* --- Carrossel e Cards --- */
+.carousel-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.vakihnas-carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.vakihnas-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Cria 3 colunas */
+    gap: 30px;
+    width: 100%;
+}
+
+/* Estilo de cada card individual */
+.vakinha-card {
+    background-color: #fdfdfd;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+    overflow: hidden; /* Garante que a imagem não passe da borda arredondada */
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #eee;
+}
+
+.vakinha-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.vakinha-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Faz o conteúdo ocupar todo o espaço vertical disponível */
+}
+
+.vakinha-title-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.vakinha-title-area h3 {
+    font-size: 2.1rem;
+    font-weight: 700;
+    color: #2c3e50; /* Tom de 'quase preto' */
+    line-height: 1.1;
+}
+
+/* Tags de categoria (Câncer, Prótese, etc.) */
+.tag {
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #ffffff;
+    white-space: nowrap; /* Impede que o texto quebre */
+}
+
+.tag-blue { background-color: #3b8dcb; }
+.tag-teal { background-color: #1abc9c; }
+
+
+.vakinha-description {
+    color: #555; /* Cor do texto secundário */
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    flex-grow: 1; /* Empurra o botão para baixo, alinhando todos os botões */
+}
+
+.btn-saber-mais {
+    background-color: #004a99;
+    color: #ffffff;
+    padding: 14px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+    align-self: center; /* Centraliza o botão no card */
+    width: 80%; /* Largura do botão */
+    transition: all 0.3s ease;
+}
+
+.btn-saber-mais:hover {
+    background-color: #003366; /* Tom mais escuro */
+    transform: scale(1.05);
+}
+
+/* Setas de navegação do carrossel */
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+    color: #555;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 10;
+    transition: all 0.2s ease;
+}
+
+.carousel-arrow:hover {
+    border-color: #007bff;
+    color: #007bff;
+}
+
+.carousel-arrow.left {
+    left: -22px;
+}
+
+.carousel-arrow.right {
+    right: -22px;
+}
+
+/*  ESTILOS DA SEÇÃO DE DETALHES DA CAMPANHA */
+
+
+.campaign-details-section {
+    padding: 60px 0;
+    background-color: var(--cor-fundo-geral);
+}
+
+.campaign-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    gap: 40px; /* Espaço entre os cards grandes */
+}
+
+.campaign-card {
+    background-color: #f8f9fa;
+    border-radius: 20px;
+    padding: 25px;
+    border: 1px solid #e9ecef;
+}
+
+/* --- Parte de Cima do Card --- */
+.campaign-header {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.campaign-main-image {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 15px;
+    flex-shrink: 0;
+}
+
+.campaign-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.campaign-info h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #003366;
+    margin-bottom: 8px;
+    font-weight: bolder;
+}
+
+.campaign-meta {
+    font-size: 1rem;
+    color: #2778B2;
+    margin-bottom: 15px;
+}
+
+.campaign-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    flex-grow: 1; /* Ocupa espaço para empurrar a barra para baixo */
+}
+
+/* --- Barra de Progresso --- */
+.progress-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.progress-label {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.progress-bar {
+    flex-grow: 1;
+    height: 28px;
+    background-color: #e0e0e0;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background-color: #007bff;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: white;
+    font-weight: 700;
+}
+
+.progress-amount {
+    padding-left: 15px;
+    font-size: 0.9rem;
+}
+
+.progress-percentage {
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.btn-donate {
+    background-color: var(--cor-primaria-escura);
+    color: var(--cor-texto-claro);
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    align-self: flex-start; /* Alinha o botão à esquerda */
+    transition: var(--transicao-padrao);
+}
+.btn-donate:hover {
+    background-color: #002244;
+}
+
+/* --- Parte de Baixo do Card --- */
+.campaign-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.photo-gallery h4,
+.donors-list h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--cor-texto-escuro);
+    margin-bottom: 15px;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.photo-grid img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.donors-list {
+    background-color: #3b8dcb;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.donors-list h4 {
+    color: var(--cor-texto-claro);
+    text-align: center;
+}
+
+.donor-items {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.donor-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.donor-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.donor-info {
+    flex-grow: 1;
+    background-color: white;
+    border-radius: 50px;
+    padding: 8px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.donor-name {
+    font-weight: 700;
+}
+
+.donor-action {
+    color: #888;
+}
+
+.donor-amount {
+    font-weight: 700;
+    color: #007bff;
+}

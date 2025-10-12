@@ -1,0 +1,185 @@
+/* ======================================= */
+/*       ESTILOS DO FORMULÁRIO DE DOAÇÃO   */
+/* ======================================= */
+
+/* --- 1. CONFIGURAÇÕES GLOBAIS E VARIÁVEIS --- */
+:root {
+    --cor-azul-escuro: #003366;
+    --cor-azul-medio: #0d47a1;
+    --cor-azul-claro-btn: #41a5c5;
+    --cor-fundo: #f0f2f5;
+    --cor-texto-claro: #ffffff;
+    --cor-texto-escuro: #333;
+    --cor-texto-placeholder: #aaa;
+    --cor-borda-input: #ccc;
+    --cor-borda-foco: #007bff;
+    --raio-borda-container: 25px;
+    --raio-borda-input: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: white;
+    color: var(--cor-texto-escuro);
+    line-height: 1.6;
+}
+
+/* --- 3. SEÇÃO PRINCIPAL DO FORMULÁRIO --- */
+.form-section {
+    background-color: white;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 70px); /* Ocupa a altura da tela menos o header */
+}
+
+.form-container {
+    max-width: 900px;
+    width: 100%;
+    background-color: var(--cor-azul-escuro);
+    border-radius: var(--raio-borda-container);
+    padding: 40px;
+    display: flex;
+    gap: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* --- 4. LADO ESQUERDO (INTRODUÇÃO) --- */
+.form-intro {
+    flex-basis: 40%;
+    color: var(--cor-fundo);
+    padding-right: 20px;
+}
+
+.form-intro h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.form-intro p {
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* --- 5. LADO DIREITO (FORMULÁRIO) --- */
+.info-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #ffffff;
+    border-radius: 1rem;
+ padding: 50PX;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.required {
+    color: #e74c3c;
+}
+
+.label-hint {
+    color: #999;
+    font-weight: 400;
+    margin-left: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="tel"],
+.form-group input[type="email"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--cor-borda-input);
+    border-radius: var(--raio-borda-input);
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input::placeholder {
+    color: var(--cor-texto-placeholder);
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--cor-borda-foco);
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.checkbox-group {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+}
+
+.checkbox-group label {
+    margin-bottom: 0;
+    font-weight: 500;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--cor-azul-claro-btn);
+    border: 2px solid var(--cor-azul-claro-btn);
+}
+
+.btn-secondary:hover {
+    background-color: var(--cor-azul-claro-btn);
+    color: white;
+}
+
+.btn-primary {
+    background-color:var(--cor-azul-medio); /* Cinza claro como na foto */
+    color: #ffffff;
+}
