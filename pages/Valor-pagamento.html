@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página de Doação</title>
+    <title>Pagamento - Realizar Pagamento</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-    <link rel="stylesheet" href="/css/valor-doar.css">
+    <link rel="stylesheet" href="/css/Valor-pagamento.css">
     <script src="/js/navbar.js"></script>
 </head>
 <body>
@@ -21,26 +20,19 @@
     </header>
 
     <main>
-        <div class="donation-container">
+        <div class="page-container">
             <div class="info-panel">
-                <h1>Digite o valor de sua doação</h1>
-                <p>Digite o valor da doação e a forma de pagamento escolhida para finalizar sua doação.</p>
+                <h1>Realize o pagamento</h1>
+                <p>Realize o pagamento para finalizar a sua inscrição.</p>
             </div>
 
             <div class="form-panel">
                 <form>
                     <div class="form-group">
-                        <label for="donation-value">Valor desejado <span class="required">*</span></label>
-                        <input type="text" id="donation-value" placeholder="R$ XX,XX">
+                        <label for="payment-value">Realize o pagamento <span class="required">*</span></label>
+                        <input type="text" id="payment-value" value="R$ 15,00" disabled>
                     </div>
-
-                    <div class="suggested-amounts">
-                        <button type="button" class="amount-btn">R$50,00</button>
-                        <button type="button" class="amount-btn active">R$150,00</button>
-                        <button type="button" class="amount-btn">R$300,00</button>
-                        <button type="button" class="amount-btn">R$450,00</button>
-                    </div>
-
+                    
                     <div class="form-group">
                         <h3>Formas de pagamentos</h3>
                         <div class="payment-options">
@@ -53,9 +45,13 @@
                         </div>
                     </div>
 
+                    <div class="qr-code-display">
+                        <i class="fa-solid fa-qrcode"></i>
+                    </div>
+
                     <div class="form-navigation">
                         <button type="button" class="nav-btn secondary">Voltar</button>
-                      <a href="/pages/vaquinha-criada.html">  <button type="submit" class="nav-btn primary">Proximo</a></button>
+                        <button type="submit" class="nav-btn primary inactive"><a href="/agradecendo.html">Proximo</a></button>
                     </div>
                 </form>
             </div>

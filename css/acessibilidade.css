@@ -1,0 +1,130 @@
+
+body.acessibilidade-ativa {
+   /* Cores cuidadosamente escolhidas para exceder o ratio de 4.5:1 da WCAG AA */
+    --cor-fundo-acessivel: #fcfcfc;    /* Fundo ligeiramente off-white para reduzir o brilho */
+    --cor-texto-acessivel: #121212;    /* Texto quase preto */
+    --cor-link-acessivel: #004a99;     /* Azul escuro e acessível para links */
+    --cor-foco-acessivel: #005fB2;     /* Azul vibrante para o anel de foco */
+
+    background-color: var(--cor-fundo-acessivel) !important;
+    color: var(--cor-texto-acessivel) !important;
+}
+
+.acessibilidade-ativa {
+    font-size: 110%; /* Aumenta a fonte base de forma relativa */
+    line-height: 1.7 !important;
+    letter-spacing: 0.5px !important;
+}
+
+.acessibilidade-ativa h1,
+.acessibilidade-ativa h2,
+.acessibilidade-ativa h3,
+.acessibilidade-ativa h4 {
+    letter-spacing: 1px !important;
+    color: var(--cor-texto-acessivel) !important;
+}
+
+
+.acessibilidade-ativa a {
+    text-decoration: underline !important;
+    text-decoration-thickness: 2px; /* Torna o sublinhado mais visível */
+    color: var(--cor-link-acessivel) !important;
+    font-weight: bold;
+}
+
+/* Estilo base para todos os elementos interativos */
+.acessibilidade-ativa button,
+.acessibilidade-ativa [class*="btn-"], /* Pega todas as classes que começam com "btn-" */
+.acessibilidade-ativa input,
+.acessibilidade-ativa select,
+.acessibilidade-ativa textarea {
+    background-image: none !important;
+    background-color: var(--cor-fundo-acessivel) !important;
+    color: var(--cor-texto-acessivel) !important;
+    border: 2px solid var(--cor-texto-acessivel) !important;
+    box-shadow: none !important;
+    font-weight: bold;
+    border-radius: 5px; /* Bordas levemente arredondadas são mais amigáveis */
+}
+
+/* Botões com maior destaque (primários) */
+.acessibilidade-ativa .cta-button,
+.acessibilidade-ativa .btn-visitar,
+.acessibilidade-ativa .btn-saber-mais,
+.acessibilidade-ativa .btn-payment {
+    background-color: var(--cor-texto-acessivel) !important;
+    color: var(--cor-fundo-acessivel) !important;
+}
+
+/* Garante que o hover dos botões também tenha contraste */
+.acessibilidade-ativa .cta-button:hover,
+.acessibilidade-ativa .btn-visitar:hover {
+    background-color: #333 !important; /* Um pouco mais claro que o preto total */
+    color: var(--cor-fundo-acessivel) !important;
+}
+
+
+
+*/
+.acessibilidade-ativa :is(a, button, input, select, textarea, [tabindex]):focus-visible {
+    outline: 3px solid var(--cor-foco-acessivel) !important;
+    outline-offset: 3px;
+    box-shadow: 0 0 0 6px rgba(0, 95, 178, 0.3) !important;
+}
+/* Remove o outline padrão quando :focus-visible não corresponde */
+.acessibilidade-ativa :is(a, button, input, select, textarea, [tabindex]):focus:not(:focus-visible) {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+
+/* -- 5. Ajustes Específicos para Componentes -- */
+
+/* Remove fundos e imagens que possam prejudicar o contraste */
+.acessibilidade-ativa .hero,
+.acessibilidade-ativa .main-header,
+.acessibilidade-ativa .raffle-container,
+.acessibilidade-ativa .raffles-grid,
+.acessibilidade-ativa .donors-list {
+    background: var(--cor-texto-acessivel) !important;
+    background-image: none !important;
+}
+
+/* Garante que o texto dentro desses componentes escuros fique claro */
+.acessibilidade-ativa .hero *,
+.acessibilidade-ativa .main-header *,
+.acessibilidade-ativa .raffle-container *,
+.acessibilidade-ativa .raffles-grid *,
+.acessibilidade-ativa .donors-list * {
+    color: var(--cor-fundo-acessivel) !important;
+}
+/* Ajusta os links nesses containers para também serem claros */
+.acessibilidade-ativa .main-header a,
+.acessibilidade-ativa .raffle-container a {
+     color: var(--cor-fundo-acessivel) !important;
+}
+
+
+/* Transforma tags e outros elementos coloridos em alto contraste */
+.acessibilidade-ativa .tag,
+.acessibilidade-ativa .section-title-bar {
+    background-color: transparent !important;
+    color: var(--cor-texto-acessivel) !important;
+    border: 2px solid var(--cor-texto-acessivel) !important;
+    font-weight: bold;
+}
+.acessibilidade-ativa .section-title-bar * {
+    color: var(--cor-texto-acessivel) !important;
+}
+
+/* Remove fundos de logo e adiciona uma borda para garantir visibilidade */
+.acessibilidade-ativa .ong-logo {
+    background-color: transparent !important;
+    border: 2px solid var(--cor-texto-acessivel);
+}
+
+/* Trata ícones (assumindo que são SVGs ou fontes de ícone) */
+.acessibilidade-ativa i, 
+.acessibilidade-ativa svg {
+    filter: grayscale(100%) contrast(500%); /* Força o ícone a ficar em alto contraste */
+}

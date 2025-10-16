@@ -29,7 +29,15 @@ body {
     color: var(--cor-texto-escuro);
     line-height: 1.6;
 }
-
+.btn-primary a{
+    text-decoration: none;
+}
+.dados{
+    color: #005CB8;
+    padding-left: -1rem;
+    padding-bottom: 1rem;
+    font-size: 3rem;
+}
 /* --- 3. SEÇÃO PRINCIPAL DO FORMULÁRIO --- */
 .form-section {
     background-color: white;
@@ -39,7 +47,6 @@ body {
     align-items: center;
     min-height: calc(100vh - 70px); /* Ocupa a altura da tela menos o header */
 }
-
 .form-container {
     max-width: 900px;
     width: 100%;
@@ -182,131 +189,4 @@ body {
 .btn-primary {
     background-color:var(--cor-azul-medio); /* Cinza claro como na foto */
     color: #ffffff;
-}
-/* =================================================== */
-/* ✨ RESPONSIVIDADE COMPLETA PARA TODO O SITE ✨      */
-/* =================================================== */
-
-/* --- Para Tablets (telas até 992px de largura) --- */
-@media (max-width: 992px) {
-    /* Ajusta as grades de 3 colunas para 2 colunas */
-    .vakihnas-list,
-    .raffles-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    /* Empilha os containers principais dos formulários */
-    .donation-container,
-    .page-container {
-        flex-direction: column;
-        max-width: 600px;
-        padding: 1.5rem;
-    }
-    
-    /* Centraliza o texto do painel de informações quando empilhado */
-    .info-panel {
-        text-align: center;
-        padding: 1rem 0;
-    }
-
-    .info-panel h1 {
-        font-size: 2.5rem; /* Reduz o título em tablets */
-    }
-
-    /* Empilha o card de ONG */
-    .ong-card {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-    .ong-title {
-        justify-content: center;
-    }
-    .ong-map-area {
-        width: 100%;
-        margin-top: 20px;
-    }
-}
-
-
-/* =================================================== */
-/* ✨ RESPONSIVIDADE COMPLETA E CORRIGIDA ✨           */
-/* =================================================== */
-
-/* --- Para Tablets (telas até 992px de largura) --- */
-@media (max-width: 992px) {
-    /* Empilha os containers principais dos formulários */
-    .donation-container,
-    .page-container {
-        flex-direction: column;
-        max-width: 600px;
-        padding: 1.5rem;
-    }
-
-    /* Centraliza o texto do painel de informações quando empilhado */
-    .info-panel {
-        text-align: center;
-        padding: 1rem 0;
-    }
-}
-
-
-/* --- Para Celulares (telas até 768px de largura) --- */
-@media (max-width: 768px) {
-    /* 1. Garante que o container principal ocupe a tela toda */
-    main {
-        padding: 0;
-        display: block; /* Remove o flex do main para um controle mais simples */
-    }
-
-    /* 2. Reseta o container azul para não ter fundo nem sombra */
-    .donation-container,
-    .page-container {
-        width: 100%;
-        max-width: 100%;
-        min-height: calc(100vh - 70px); /* Ocupa a altura da tela menos o header */
-        flex-direction: column;
-        padding: 1rem; /* Um pequeno respiro nas laterais */
-        gap: 0;
-        background-color: transparent;
-        box-shadow: none;
-        border-radius: 0;
-    }
-
-    /* 3. Transforma o painel azul em um "cabeçalho de card" com altura automática */
-    .info-panel {
-        flex-basis: auto; /* A altura será definida pelo conteúdo */
-        flex-grow: 0;     /* Impede que ele cresça */
-        padding: 2.5rem 1.5rem;
-        border-radius: 15px 15px 0 0; /* Arredonda só os cantos de cima */
-        text-align: center;
-    }
-
-    /* 4. Faz o formulário branco ocupar o resto do espaço */
-    .form-panel {
-        flex-grow: 1; /* ESSA É A REGRA MAIS IMPORTANTE: faz o painel crescer */
-        border-radius: 0 0 15px 15px; /* Arredonda só os cantos de baixo */
-        margin-top: -1px; /* Garante a junção perfeita com o painel de cima */
-        padding: 2rem 1.5rem;
-    }
-    
-    /* 5. Ajustes de formulário para layout mobile */
-    .suggested-amounts {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .form-row {
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-
-    .form-navigation {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .nav-btn {
-        width: 100%;
-    }
 }

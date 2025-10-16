@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscrição - Preencher Informações</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/css/acessibilidade.css">
+    <link rel="stylesheet" href="/css/pagamento-eventos.css">
+    <script src="/js/navbar.js"></script>
+    <script src="/js/acess.js"></script>
+</head>
+<body>
+    
+    <header class="main-header">
+        <div id="navbar"></div>
+    </header>
+
+    <main>
+        <div class="page-container">
+            <div class="info-panel">
+                <h1>Preencha as informações</h1>
+                <p>Para finalizar a sua inscrição preencha com suas informações.</p>
+            </div>
+
+            <div class="form-panel">
+                <form>
+                    <div class="form-group">
+                        <label for="full-name">Nome completo <span class="required">*</span></label>
+                        <input type="text" id="full-name" placeholder="Campo Obrigatório">
+                        <p class="field-hint">Igual ao que consta no Cpf</p>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="cpf">CPF <span class="required">*</span></label>
+                            <input type="text" id="cpf" placeholder="Campo Obrigatório">
+                            <p class="field-hint">Apenas Números</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="celular">Celular <span class="required">*</span></label>
+                            <input type="tel" id="celular" placeholder="(XX) XXXX - XXXX">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-mail <span class="required">*</span></label>
+                        <input type="email" id="email" placeholder="Campo Obrigatório">
+                    </div>
+
+                    <div class="form-navigation">
+                        <button type="button" class="nav-btn secondary">Voltar</button>
+                        <button type="submit" class="nav-btn primary">Proximo</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

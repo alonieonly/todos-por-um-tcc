@@ -14,5 +14,9 @@ class VaquinhaController {
     public function getVaquinhas() {
         return $this->vaquinhaService->getAllVaquinhasAtivas();
     }
+
+    public function getDoadores($id_vaquinha) {
+        return $this->vaquinhaService->getDoadoresVaquinha($id_vaquinha);
+    }
 }
 ?>

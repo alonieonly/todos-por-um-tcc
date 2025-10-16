@@ -1,0 +1,133 @@
+/* ======================================= */
+/*    ESTILOS DA PÁGINA DE DETALHES DA ONG */
+/* ======================================= */
+
+/* --- 1. CONFIGURAÇÕES GLOBAIS --- */
+:root {
+    --cor-azul-escuro: #003366;
+    --cor-azul-claro: #41a5c5;
+    --cor-logo-fundo: #b3e5fc; /* Azul bem claro do logo */
+    --cor-fundo-pagina: #f0f2f5;
+    --cor-fundo-card: #ffffff;
+    --cor-texto-claro: #ffffff;
+    --cor-texto-escuro: #333;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--cor-fundo-pagina);
+    color: var(--cor-texto-escuro);
+}
+
+
+/* --- 3. CONTEÚDO PRINCIPAL --- */
+.page-container {
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
+.content-card {
+    display: flex;
+    gap: 40px;
+    background-color: var(--cor-fundo-card);
+    padding: 40px;
+    border-radius: 25px;
+    max-width: 1100px;
+    width: 100%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* --- 4. COLUNAS --- */
+.left-column { flex-basis: 60%; }
+.right-column {
+    flex-basis: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* --- 5. CABEÇALHO DA ONG (ESQUERDA) --- */
+.ong-header {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+.ong-logo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: var(--cor-logo-fundo);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    flex-shrink: 0;
+}
+.ong-logo img { width: 100%; }
+.ong-title-tags h1 { font-size: 2.5rem; font-weight: 700; }
+.tags { display: flex; gap: 10px; margin-top: 10px; }
+.tag { background-color: #e0e0e0; padding: 5px 15px; border-radius: 50px; font-size: 0.8rem; font-weight: 600; display: flex; align-items: center; gap: 5px; }
+.tag svg { fill: #555; }
+
+/* --- 6. GALERIA DE FOTOS (ESQUERDA) --- */
+.main-photo { width: 100%; border-radius: 15px; margin-bottom: 15px; }
+.thumbnail-photos { display: flex; gap: 15px; }
+.thumb-photo { width: 33.33%; border-radius: 10px; }
+
+/* --- 7. MAPA E CONTATO (DIREITA) --- */
+.map-area { width: 100%; text-align: center; }
+.map-image { width: 100%; border-radius: 15px; }
+.address-bar {
+    display: inline-block;
+    background-color: var(--cor-azul-escuro);
+    color: white;
+    padding: 8px 25px;
+    border-radius: 50px;
+    margin-top: -18px;
+    position: relative;
+    font-size: 0.9rem;
+}
+.navigation-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    margin-top: 30px;
+}
+.nav-btn {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 50px;
+    padding: 10px;
+    text-decoration: none;
+    color: var(--cor-texto-escuro);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.2s ease;
+}
+.nav-btn:hover { background-color: #f5f5f5; border-color: #ccc; }
+.nav-btn svg { fill: #555; }
+
+.contact-info { margin-top: 25px; color: #777; font-weight: 600; }
+.btn-contact {
+    margin-top: auto; /* Empurra para o final */
+    padding-top: 20px;
+    background-color: var(--cor-azul-escuro);
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.2s ease;
+}
+.btn-contact:hover { background-color: #004b8d; }

@@ -18,12 +18,18 @@ $vaquinhas = $dados['vaquinhas'];
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="../js/navbar.js"></script>
+    <script src="../js/acess.js"></script>
+    <link rel="stylesheet" href="../css/acessibilidade.css">
 </head>
 
 <body>
     <header>
         <div id="navbar"></div>
-
+        <button id="btn-acessibilidade" title="Ativar modo de acessibilidade">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
+                <path d="M12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm9 7h-6v13h-2v-6h-2v6H9V9H3V7h18v2z"/>
+            </svg>
+        </button>
     </header>
     <main>
         <section class="hero">
@@ -59,7 +65,7 @@ $vaquinhas = $dados['vaquinhas'];
                         <?php else: ?>
                             <?php foreach ($vaquinhas as $vaquinha): ?>
                                 <article class="vakinha-card">
-                                    <img src="<?php echo htmlspecialchars($vaquinha['imagem_url'] ?? '../imgs/Foto_Paciente_tatiane.png'); ?>" 
+                                    <img src="<?php echo htmlspecialchars($vaquinha['foto_paciente'] ?? '../imgs/Foto_Paciente_tatiane.png'); ?>" 
                                         alt="<?php echo htmlspecialchars($vaquinha['nome_paciente']); ?>"
                                         class="vakinha-image">
 
@@ -73,15 +79,16 @@ $vaquinhas = $dados['vaquinhas'];
                                         </p>
 
                                         <div class="progress-info">
+                                            <span class="progress-amount">R$ <?php echo number_format($vaquinha['valor_arrecadado'], 2, ',', '.'); ?>/R$ <?php echo number_format($vaquinha['meta'], 2, ',', '.'); ?></span>
                                             <div class="progress-bar">
-                                                <div class="progress" style="width: <?php echo min($vaquinha['progresso_percentual'], 100); ?>%"></div>
-                                            </div>
-                                            <div class="progress-text">
-                                                <span>R$ <?php echo number_format($vaquinha['valor_arrecadado'], 2, ',', '.'); ?></span>
-                                                <span><?php echo number_format($vaquinha['progresso_percentual'], 1); ?>%</span>
-                                                <span>R$ <?php echo number_format($vaquinha['meta'], 2, ',', '.'); ?></span>
+                                                <div class="progress-bar-fill" style="width: <?php echo min($vaquinha['progresso_percentual'], 100); ?>%;">
+                                                    <span class="progress-percentage" style="padding-left: 15px;">
+                                                        <?php echo min($vaquinha['progresso_percentual'], 100); ?>%
+                                                    </span>
+                                                </div>
                                             </div>
                                         </div>
+                                        <br>
 
                                         <a href="../pages/Pacientes.html" class="btn-saber-mais">Saber mais!</a>
                                     </div>
@@ -169,7 +176,49 @@ $vaquinhas = $dados['vaquinhas'];
                         </div>
                     </div>
                 </section>
+        <section class="raffles-section">
+            <div class="container">
+                <div class="section-title-bar">
+                    <h2>Rifas beneficentes</h2>
+                </div>
 
+                <div class="sponsors-area">
+                    <h4>Patrocinadores</h4>
+                    <div class="sponsors-list">
+                        <div class="sponsor-logo"></div>
+                        <div class="sponsor-logo"></div>
+                        <div class="sponsor-logo"></div>
+                        <div class="sponsor-logo"></div>
+                    </div>
+                </div>
+
+                <div class="raffles-grid">
+                    <article class="raffle-card">
+                        <img src="/imgs/carro133.png" alt="Carro novo com um laço vermelho">
+                        <div class="raffle-content">
+                            <h3>Rifa de um carro 0km</h3>
+                            <p>Fundo de arrecadação para o tratamento...</p>
+                        </div>
+                    </article>
+
+                    <article class="raffle-card">
+                        <img src="/imgs/aviao3.png" alt="Passagens de avião sobre uma praia tropical">
+                        <div class="raffle-content">
+                            <h3>Rifa de uma viagem para Fernando de Noronha com tudo pago</h3>
+                            <p>Fundo de arrecadação para o tratamento...</p>
+                        </div>
+                    </article>
+
+                    <article class="raffle-card">
+                        <img src="/imgs/ajntar.png" alt="Interior de um restaurante elegante">
+                        <div class="raffle-content">
+                            <h3>Jantar em restaurante</h3>
+                            <p>Fundo de arrecadação para o tratamento...</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
         <section class="ongs-destaque">
             <div class="container-ongs">
 

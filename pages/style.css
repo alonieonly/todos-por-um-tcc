@@ -42,7 +42,7 @@ body {
 
 /* --- 3. SEÇÃO HERO --- */
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../imgs/IMAGEM_HOME.png') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/imgs/IMAGEM_HOME.png') no-repeat center center/cover;
     
     /* 🎯 AJUSTES APLICADOS AQUI */
     height: 400px;                 /* Define uma altura fixa para o banner */
@@ -828,4 +828,337 @@ body {
 .donor-amount {
     font-weight: 700;
     color: #007bff;
+}
+/* ======================================= */
+/*    ESTILOS DA SEÇÃO DE RIFAS BENEFICENTES */
+/* ======================================= */
+
+.raffles-section {
+    padding: 40px 0;
+    background-color: var(--cor-fundo-geral);
+}
+
+/* --- Área dos Patrocinadores --- */
+.sponsors-area {
+    margin: 30px 0;
+}
+
+.sponsors-area h4 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--cor-texto-secundario);
+    margin-bottom: 5px;
+    padding-left: 10px;
+    border-left: 3px solid var(--cor-primaria);
+}
+
+.sponsors-list {
+    display: flex;
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.sponsor-logo {
+    width: 120px;
+    height: 120px;
+    background-color: #e0e0e0; /* Cinza claro para o placeholder */
+    border-radius: 50%;
+}
+
+/* --- Grade das Rifas --- */
+.raffles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    background-color: var(--cor-primaria-escura);
+    padding: 30px;
+    border-radius: var(--raio-borda-card);
+}
+
+.raffle-card {
+    background-color: var(--cor-primaria-escura);
+    border-radius: var(--raio-borda-card);
+    overflow: hidden;
+    color: var(--cor-texto-claro);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: var(--transicao-padrao);
+}
+
+.raffle-card:hover {
+    transform: translateY(-5px);
+}
+
+.raffle-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+.raffle-content {
+    padding: 15px;
+}
+
+.raffle-content h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 8px;
+}
+
+.raffle-content p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}/* ======================================= */
+/*      ESTILOS DA PÁGINA DE SELEÇÃO DA RIFA */
+/* ======================================= */
+
+.raffle-section {
+    padding: 40px 20px;
+    background-color: var(--cor-fundo-geral, #f4f4f4); /* Usa variável, se existir */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.raffle-container {
+    display: flex;
+    max-width: 950px;
+    width: 100%;
+    background-color: var(--cor-primaria-escura, #003366);
+    border-radius: 25px;
+    padding: 30px;
+    gap: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* --- Coluna da Esquerda --- */
+.raffle-intro {
+    flex-basis: 40%;
+    color: white;
+}
+.raffle-image {
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+.raffle-intro h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 15px;
+}
+.raffle-intro p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* --- Coluna da Direita (Painel Branco) --- */
+.selection-box {
+    flex-basis: 60%;
+    background-color: white;
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.selection-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--cor-primaria, #005fB2);
+    margin-bottom: 25px;
+}
+
+/* --- Grade de Números --- */
+.ticket-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    width: 100%;
+    max-width: 350px;
+    margin-bottom: 25px;
+}
+.ticket-option {
+    background-color: #f0f0f0;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 10px;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.ticket-option:hover {
+    border-color: var(--cor-destaque, #00aeff);
+    background-color: #e3f2fd;
+}
+.ticket-number {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #555;
+}
+.ticket-price {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+/* --- Valor Total --- */
+.total-value {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--cor-primaria, #005fB2);
+    margin-bottom: 25px;
+}
+.total-amount {
+    margin-left: 5px;
+}
+
+/* --- Botão de Pagamento --- */
+.btn-payment {
+    display: inline-block;
+    width: 100%;
+    max-width: 350px;
+    padding: 14px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-image: linear-gradient(to right, #2692b7, #00598b);
+    box-shadow: 0 4px 15px rgba(0, 91, 140, 0.3);
+}
+.btn-payment:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 91, 140, 0.4);
+}
+
+/* --- Ajustes para telas menores --- */
+/* ======================================= */
+/* RESPONSIVIDADE                  */
+/* ======================================= */
+
+/* --- Para Tablets (telas até 992px de largura) --- */
+@media (max-width: 992px) {
+    /* Ajusta as grades de 3 colunas para 2 colunas */
+    .vakihnas-list,
+    .raffles-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Empilha o conteúdo da página de seleção da rifa */
+    .raffle-container {
+        flex-direction: column;
+        max-width: 600px; /* Ajusta a largura máxima para o layout de coluna */
+    }
+
+    .raffle-intro, .selection-box {
+        flex-basis: auto; /* Permite que as colunas ocupem a largura total */
+    }
+
+    /* Empilha o card de ONG */
+    .ong-card {
+        flex-direction: column;
+        align-items: center; /* Centraliza o conteúdo */
+        text-align: center;
+    }
+
+    .ong-title {
+        justify-content: center; /* Centraliza o título e ícones */
+    }
+
+    .ong-map-area {
+        width: 100%;
+        margin-top: 20px;
+    }
+}
+
+
+/* --- Para Celulares (telas até 768px de largura) --- */
+@media (max-width: 768px) {
+    .container, .container-ongs, .carousel-container, .campaign-container {
+        padding: 0 15px; /* Reduz o espaçamento lateral */
+    }
+
+    /* --- Seção Hero --- */
+    .hero {
+        width: 100%; /* Ocupa a largura toda */
+        height: 350px;
+        border-radius: 0; /* Remove as bordas arredondadas no mobile */
+        margin-top: 0;
+    }
+    .hero h1 {
+        font-size: 2.5rem; /* Reduz o tamanho da fonte principal */
+    }
+    .donated-pieces {
+        font-size: 1.2rem;
+        padding: 6px 15px;
+        bottom: -18px;
+    }
+    
+    /* --- Títulos de Seção --- */
+    .section-title-bar, .vakihnas-header {
+        width: 100%;
+        border-radius: 0;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    /* --- Cards de Evento --- */
+    .event-card {
+        flex-direction: column; /* Empilha a imagem sobre o texto */
+    }
+    .event-image-wrapper {
+        width: 100%;
+        height: 200px;
+    }
+    .event-image-wrapper img {
+        border-radius: var(--raio-borda-card) var(--raio-borda-card) 0 0; /* Arredonda cantos superiores */
+    }
+    .details-button {
+        align-self: center; /* Centraliza o botão */
+        width: 100%;
+        text-align: center;
+    }
+
+    /* --- Grides de 1 Coluna --- */
+    .vakihnas-list,
+    .raffles-grid {
+        grid-template-columns: 1fr; /* Todas as grades passam a ter 1 coluna */
+    }
+    .sponsors-list {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    /* --- Seção de Detalhes da Campanha --- */
+    .campaign-header {
+        flex-direction: column; /* Empilha a imagem e as informações */
+        align-items: center;
+    }
+    .campaign-main-image {
+        width: 100%;
+        height: 250px;
+    }
+    .campaign-info h2 {
+        font-size: 1.8rem;
+    }
+    .campaign-body {
+        grid-template-columns: 1fr; /* Empilha a galeria e a lista de doadores */
+    }
+
+    /* --- Página de Seleção da Rifa --- */
+    .raffle-container {
+        padding: 20px;
+    }
+    .raffle-intro h1 {
+        font-size: 2rem;
+    }
+    .ticket-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas para os tickets */
+    }
 }
