@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.main-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sub-container {
+    width: 934px;
+    height: 679px;
+    background-color: #003366;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 20px;
+    margin-top: 70px;
+}
+
+.cadastro-container {
+    background-color: #ffffff;
+    padding: 40px;
+    width: 606px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 20px;
+}
+
+h1 {
+    color: #003366;
+    font-size: 50px;
+    font-weight: 700;
+}
