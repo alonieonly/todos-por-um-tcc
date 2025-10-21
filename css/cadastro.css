@@ -1,0 +1,111 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.main-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sub-container {
+    width: 934px;
+    height: 679px;
+    background-color: #003366;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 20px;
+    margin-top: 70px;
+}
+
+.cadastro-container {
+    background-color: #ffffff;
+    padding: 40px;
+    width: 800px;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+}
+
+.cadastro-forms {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cadastro-form {
+    width: 35%;
+    height: 100%;
+}
+
+.laudo-container {
+    width: 35%;
+    height: 100%;
+}
+
+h1 {
+    height: 5%;
+    color: #003366;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 5px;
+}
+
+label {
+    color: #003366;
+}
+
+input[type="text"] {
+    width: 480px;
+    height: 48px;
+    border-radius: 20px;
+    outline: none;
+    border: 1px solid #003366;
+}
+
+input[type="date"] {
+    width: 480px;
+    height: 48px;
+    border-radius: 20px;
+    outline: none;
+    border: 1px solid #003366;
+}
+
+input[type="password"] {
+    width: 480px;
+    height: 48px;
+    border-radius: 20px;
+    outline: none;
+    border: 1px solid #003366;
+}
+
+button {
+    width: 323px;
+    height: 47px;
+    margin-left: 75px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    border-radius: 25px;
+    cursor: pointer;
+    background-color: #003366;
+    color: #ffffff;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+button:hover {
+    background-color: #005dbb;
+}
